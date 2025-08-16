@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatalogWatcher Pro - Discord Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-indigo-600 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 animate-fadeIn">CatalogWatcher Pro</h1>
+            <p class="text-lg md:text-xl text-indigo-200 animate-fadeIn" style="animation-delay: 0.2s;">
+                Your Ultimate IMVU Product Tracking Discord Bot
+            </p>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-semibold mb-4 animate-fadeIn" style="animation-delay: 0.4s;">
+                What is CatalogWatcher Pro?
+            </h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto animate-fadeIn" style="animation-delay: 0.6s;">
+                CatalogWatcher Pro is a powerful Discord bot designed to track new product drops from your favorite IMVU creators. 
+                Built with a Python backend and Discord API, it delivers real-time notifications with a touch of humor, ensuring you never miss a new item!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 0.8s;">
+                <h3 class="text-xl font-bold mb-4">Real-Time Tracking</h3>
+                <p class="text-gray-400">
+                    Monitors IMVU creator catalogs every 10 minutes to notify you instantly when new products are added.
+                </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 1s;">
+                <h3 class="text-xl font-bold mb-4">Custom Alerts</h3>
+                <p class="text-gray-400">
+                    Configure notifications for specific creators, channels, or roles, and get direct messages for your favorite creators.
+                </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg animate-fadeIn" style="animation-delay: 1.2s;">
+                <h3 class="text-xl font-bold mb-4">Meme-Powered</h3>
+                <p class="text-gray-400">
+                    Adds a fun twist with 100+ random jokes included in product updates, keeping your community entertained.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-8 animate-fadeIn" style="animation-delay: 1.4s;">
+                Key Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 1.6s;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3562/3562750.png" alt="IMVU Icon" class="w-12 h-12">
+                    <div>
+                        <h3 class="text-xl font-bold">IMVU Catalog Scraping</h3>
+                        <p class="text-gray-400">
+                            Uses aiohttp and BeautifulSoup to scrape IMVU product pages, extracting details like price, status, and audience (GA/AP).
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 1.8s;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Discord Icon" class="w-12 h-12">
+                    <div>
+                        <h3 class="text-xl font-bold">Rich Discord Embeds</h3>
+                        <p class="text-gray-400">
+                            Sends visually appealing embeds with product images, prices, and a "Buy Now" button for quick purchases.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 2s;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968704.png" alt="Settings Icon" class="w-12 h-12">
+                    <div>
+                        <h3 class="text-xl font-bold">Flexible Configuration</h3>
+                        <p class="text-gray-400">
+                            Manage creators, channels, and roles with commands like <code>/add_creator</code>, <code>/set_notify_channel</code>, and more.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fadeIn" style="animation-delay: 2.2s;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Alert Icon" class="w-12 h-12">
+                    <div>
+                        <h3 class="text-xl font-bold">Personalized DM Alerts</h3>
+                        <p class="text-gray-400">
+                            Use <code>/watch_creator</code> to receive direct messages for new drops from your favorite creators.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-semibold text-center mb-8 animate-fadeIn" style="animation-delay: 2.4s;">
+            Bot Commands
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <ul class="space-y-4 text-gray-300 animate-fadeIn" style="animation-delay: 2.6s;">
+                <li><code>/add_creator</code>: Add a creator to track with their IMVU catalog URL.</li>
+                <li><code>/remove_creator</code>: Stop tracking a creator.</li>
+                <li><code>/list_creators</code>: View all tracked creators.</li>
+                <li><code>/check_now</code>: Force an immediate product scan.</li>
+                <li><code>/set_notify_channel</code>: Set the default channel for notifications.</li>
+                <li><code>/watch_creator</code>: Get DMs for a creator's new drops.</li>
+                <li><code>/drop_stats</code>: See how many drops a creator has logged.</li>
+                <li><code>/help</code>: View all available commands.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bg-indigo-600 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-4 animate-fadeIn" style="animation-delay: 2.8s;">
+                Get Started
+            </h2>
+            <p class="text-lg text-indigo-200 mb-6 animate-fadeIn" style="animation-delay: 3s;">
+                Invite CatalogWatcher Pro to your Discord server and start tracking IMVU creators today!
+            </p>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1387764414404493312&permissions=268438528&scope=bot%20applications.commands" class="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg hover:bg-indigo-100 transition animate-fadeIn" style="animation-delay: 3.2s;">
+                Add to Discord
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-400">Developed with ❤️ for the IMVU community | Hosted on GitHub</p>
+    </footer>
+
+    <script>
+        // GSAP animations for smooth scrolling effects
+        gsap.utils.toArray('.animate-fadeIn').forEach((element, index) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                delay: index * 0.2,
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                }
+            });
+        });
+    </script>
+</body>
+</html>
